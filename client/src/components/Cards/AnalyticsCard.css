@@ -1,0 +1,101 @@
+/* src/components/Cards/AnalyticsCard.css (UPDATED for Dynamic Theming) */
+
+:root {
+    --card-bg: #ffffff;
+    --primary-text: #2f3643;
+    --secondary-text: #7f8c8d;
+    --border-color: #e0eeef;
+    --box-shadow-light: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.analytics-card {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 120px;
+    border: 1px solid transparent; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    
+    /* REMOVED: background: #f8f88f; - Now handled by JSX style prop */
+}
+
+.analytics-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    /* Use a standard light border on hover if the dynamic border isn't preferred */
+    border: 1px solid var(--border-color); 
+}
+
+/* --- Card Header (Title and Icon) --- */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    border-radius: 9px;
+    /* REMOVED: background: #d3e2d2; - Now handled by dynamic color in JSX */
+}
+
+.card-title {
+    font-size: 0.9rem;
+    color: var(--secondary-text);
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.card-icon-container {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-icon {
+    font-size: 1.5rem;
+}
+
+/* --- Value Section (Unchanged) --- */
+.card-value-section {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 15px;
+}
+
+.card-value {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--primary-text);
+    line-height: 1;
+    margin-right: 15px;
+}
+
+.card-trend {
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+/* --- Card Footer (Unchanged) --- */
+.card-footer {
+    border-top: 1px solid var(--border-color);
+    padding-top: 8px;
+}
+
+.footer-detail {
+    font-size: 0.75rem;
+    color: var(--secondary-text);
+    margin: 0;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.footer-detail:hover {
+    color: var(--primary-text);
+}

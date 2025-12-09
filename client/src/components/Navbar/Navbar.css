@@ -1,0 +1,151 @@
+/* src/components/Navbar/Navbar.css */
+
+:root {
+    --navbar-bg: #ffffff;
+    --primary-text: #2c3e50;
+    --secondary-text: #7f8c8d;
+    --accent-name: #50ad2a;
+    --border-color: #e0eeef;
+    --primary-blue: #3498db;
+    --hover-light: #f4f6f9;
+    --icon-size: 1.5rem;
+}
+
+.navbar {
+    background-color: var(--navbar-bg);
+    height: 65px;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+}
+
+.navbar-left, .navbar-right {
+    display: flex;
+    align-items: center; 
+}
+
+/* Left Section */
+.sidebar-toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: var(--icon-size);
+    color: var(--secondary-text);
+    margin-right: 20px;
+}
+
+.sidebar-toggle-btn:hover {
+    color: var(--primary-blue);
+}
+
+.navbar-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-text);
+}
+
+/* Notification */
+.notification-area {
+    padding: 8px 12px; 
+    cursor: pointer;
+    border-radius: 10px; 
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+.notification-area:hover {
+    background-color: var(--hover-light);
+}
+
+.notification-icon-wrapper {
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+}
+
+/* Divider */
+.navbar-separator {
+    width: 1px;
+    height: 30px;
+    background-color: var(--border-color);
+    margin: 0 20px;
+}
+
+/* User Profile */
+.user-profile-widget {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-info-display {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 10px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.user-info-display:hover {
+    background-color: var(--hover-light);
+}
+
+/* Avatar */
+.user-avatar-placeholder {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: var(--primary-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-initials {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: white;
+}
+
+/* User Text */
+.user-details {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.user-name {
+    font-size: 0.95rem;
+    color: var(--accent-name);
+    font-weight: 600;
+}
+
+.user-role {
+    font-size: 0.75rem;
+    color: var(--secondary-text);
+}
+
+/* Settings Button */
+.settings-btn {
+    font-size: 1.2rem;
+    color: var(--secondary-text);
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    transition: 0.2s ease;
+}
+
+.settings-btn:hover {
+    background-color: var(--hover-light);
+    color: var(--primary-blue);
+}
