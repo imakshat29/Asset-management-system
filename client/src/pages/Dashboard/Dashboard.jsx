@@ -60,7 +60,7 @@ const Dashboard = () => {
                             title="Upcoming Returns" 
                             value="8" 
                             icon={FiCalendar} 
-                            color={cardColors.red} // RED
+                            color={cardColors.yellow} // yellow
                         />
                     </section>
                     

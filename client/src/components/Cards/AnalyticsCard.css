@@ -19,6 +19,8 @@
     min-height: 120px;
     border: 1px solid transparent; 
     transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    background-color: rgb(187 176 1 / 8%);
+    border: 1px solid rgb(187 220 53 / 19%);
     
     /* REMOVED: background: #f8f88f; - Now handled by JSX style prop */
 }
@@ -55,10 +57,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #d1d109;
 }
 
 .card-icon {
     font-size: 1.5rem;
+    
 }
 
 /* --- Value Section (Unchanged) --- */
@@ -80,6 +84,7 @@
     font-size: 0.9rem;
     font-weight: 600;
     line-height: 1.5;
+    color: #a1a10b;
 }
 
 /* --- Card Footer (Unchanged) --- */
@@ -98,4 +103,16 @@
 
 .footer-detail:hover {
     color: var(--primary-text);
+}
+.card-icon-container {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* NEW – light yellow background */
+    background-color: rgba(209, 209, 9, 0.15); 
+    color: #d1d109;
 }
