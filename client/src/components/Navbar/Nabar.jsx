@@ -38,6 +38,7 @@ const Navbar = ({
                 <h2 className="navbar-title">Asset Management Dashboard</h2>
             </div>
             
+            
             {/* RIGHT SECTION */}
             <div className="navbar-right">
                 

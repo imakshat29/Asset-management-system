@@ -1,0 +1,51 @@
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.assetTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.assetTable th, 
+.assetTable td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.assetTable th {
+  background-color: #f2f4f6;
+  color: #2c3e50;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.assetTable tr:hover {
+  background-color: #f8f9fa;
+}
+
+/* Status Badges */
+.statusBadge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+.InUse {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.Available {
+  background-color: #cce5ff;
+  color: #004085;
+}
+
+.Maintenance {
+  background-color: #fff3cd;
+  color: #856404;
+}
