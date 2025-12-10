@@ -1,0 +1,149 @@
+/* Container */
+.asset-container {
+  padding: 16px;
+}
+
+.asset-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+/* FILTER BAR */
+.filter-bar {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+  align-items: center;
+}
+
+.filter-input,
+.filter-select {
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.filter-input {
+  width: 260px;
+}
+
+.clear-btn {
+  padding: 8px 14px;
+  background: #e63946;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.clear-btn:hover {
+  background: #c92434;
+}
+
+.summary {
+  margin-left: auto;
+  color: #666;
+}
+
+/* TABLE */
+.asset-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.asset-table thead {
+  background: #f7f7f9;
+}
+
+.asset-table th {
+  padding: 12px 10px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.asset-table td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+/* Zebra Stripe */
+.asset-table tbody tr:nth-child(even) {
+  background: #fbfbfb;
+}
+
+/* Hover */
+.asset-table tbody tr:hover {
+  background: #eef6ff;
+}
+
+/* EMPTY + ERROR */
+.empty-message,
+.error-message {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+}
+
+.error-message {
+  color: red;
+}
+
+/* Skeleton Loader */
+.skeleton {
+  height: 12px;
+  width: 80%;
+  background: #eee;
+  border-radius: 4px;
+  animation: pulse 1.4s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+
+/* PAGINATION */
+.pagination {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.page-btn {
+  padding: 6px 12px;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.page-btn:hover {
+  background: #f3f3f3;
+}
+
+.page-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.page-btn.active {
+  border: 2px solid #1976d2;
+  background: #e8f0ff;
+}
+
+.ellipsis {
+  padding: 6px 10px;
+  color: #aaa;
+}
