@@ -6,6 +6,8 @@ import cors from "cors";
 import connectDB from "./src/config/mongo.config.js";
 import reportRoutes from "./src/routes/report.route.js";
 import Asset from "./src/models/asset.js";
+import assetRoutes from "./src/routes/asset.routes.js";
+import employee from "./src/models/employee.js";
 
 dotenv.config();
 
@@ -24,6 +26,9 @@ app.get("/", (req, res) => {
 // Reporting Routes
 app.use("/api/reports", reportRoutes);
 
+
+app.use("/api/assets", assetRoutes);
+
 //Insert assets in DB
 app.post("/api/assets", async (req, res) => {
   try {
@@ -33,6 +38,16 @@ app.post("/api/assets", async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
+
+app.post("/api/employee", async (req, res) => {
+  try {
+    const asset = await employee.create(req.body);
+    res.json(asset);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 
 
 

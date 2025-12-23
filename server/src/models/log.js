@@ -2,11 +2,20 @@ import express from "express";
 import mongoose from "mongoose";
 
 const logSchema = new mongoose.Schema({
-    assetId: mongoose.Schema.Types.ObjectId,
-    employeeId: mongoose.Schema.Types.ObjectId,
+    assetId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Asset",
+        required: true,
+    },
+    employeeId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Employee",
+        required: true,
+    },
     type: {
         type: String,
-        enum: ["Assigned", "Returned"]
+        enum: ["Assigned", "Returned"],
+        required: true,
     },
     date: {
         type: Date,
