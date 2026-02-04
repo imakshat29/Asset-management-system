@@ -1,0 +1,136 @@
+/* ===== Base ===== */
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f3f4f6;
+  transition: background 0.3s ease;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  width: 240px;
+  background: white;
+  padding: 20px 14px;
+  border-right: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.logo-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.divider {
+  height: 1px;
+  background: #e5e7eb;
+  margin: 16px 0;
+}
+
+/* Menu */
+.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu a {
+  display: flex;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #374151;
+  font-weight: 500;
+}
+
+.menu a:hover {
+  background: #eef2ff;
+}
+
+.menu a.active {
+  background: #2563eb;
+  color: white;
+}
+
+/* Buttons */
+.sidebar-btn {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 500;
+  color: #374151;
+}
+
+.sidebar-btn:hover {
+  background: #eef2ff;
+}
+
+.logout {
+  color: #dc2626;
+}
+
+/* Content */
+.content {
+  flex: 1;
+  padding: 28px;
+}
+
+/* ================= DARK MODE ================= */
+
+.layout.dark {
+  background: #0f172a;
+}
+
+.layout.dark .sidebar {
+  background: #020617;
+  border-right: 1px solid #1e293b;
+}
+
+.layout.dark .divider {
+  background: #1e293b;
+}
+
+.layout.dark .menu a {
+  color: #e5e7eb;
+}
+
+.layout.dark .menu a:hover {
+  background: #1e293b;
+}
+
+.layout.dark .menu a.active {
+  background: #2563eb;
+}
+
+.layout.dark .sidebar-btn {
+  color: #e5e7eb;
+}
+
+.layout.dark .sidebar-btn:hover {
+  background: #1e293b;
+}
+
+.layout.dark .content {
+  background: #0f172a;
+  color: #e5e7eb;
+}
