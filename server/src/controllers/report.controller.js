@@ -62,16 +62,67 @@ export const getAssignmentStats = async (req, res) => {
 export const getMonthlyAnalytics = async (req, res) => {
     try {
         const purchases = await Asset.aggregate([
+            { $match: { purchaseDate: { $ne: null } } },
             {
                 $group: {
-                    _id: { year: { $year: "$purchaseDate" }, month: { $month: "$purchaseDate" } },
+                    _id: {
+                        year: { $year: "$purchaseDate" },
+                        month: { $month: "$purchaseDate" }
+                    },
                     count: { $sum: 1 }
                 }
-            }
+            },
+            { $sort: { "_id.year": 1, "_id.month": 1 } }
         ]);
-        res.json(purchases);
+
+        // res.json(purchases);
+        // Assets assigned per month
+        const assignments = await Log.aggregate([
+            { $match: { type: "Assigned" } },
+            {
+                $group: {
+                    _id: {
+                        year: { $year: "$date" },
+                        month: { $month: "$date" }
+                    },
+                    count: { $sum: 1 }
+                }
+            },
+            { $sort: { "_id.year": 1, "_id.month": 1 } }
+        ]);
+
+        // Assets returned per month
+        const returns = await Log.aggregate([
+            { $match: { type: "Returned" } },
+            {
+                $group: {
+                    _id: {
+                        year: { $year: "$date" },
+                        month: { $month: "$date" }
+                    },
+                    count: { $sum: 1 }
+                }
+            },
+            { $sort: { "_id.year": 1, "_id.month": 1 } }
+        ]);
+
+        // Format response for frontend/dashboard
+        const formatData = (data) =>
+            data.map(item => ({
+                year: item._id.year,
+                month: item._id.month,
+                count: item.count
+            }));
+
+        res.status(200).json({
+            purchases: formatData(purchases),
+            assignments: formatData(assignments),
+            returns: formatData(returns)
+        });
 
     } catch (err) {
-        res.status(500).json({ error: err.message });
+        res.status(500).json({ 
+            message: "Failed to fetch monthly analytics",
+            error: err.message });
     }
 };
